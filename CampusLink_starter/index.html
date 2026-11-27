@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="高校生のための交流掲示板 CampusLink">
+  <title>CampusLink | 高校生の交流掲示板</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="CampusLink ホーム"><span class="brand-mark">C</span> CampusLink</a>
+      <nav aria-label="メインナビゲーション">
+        <a href="#posts">掲示板</a>
+        <a href="#about">CampusLinkについて</a>
+      </nav>
+      <button class="button button-primary header-post" id="open-post-form">投稿する ＋</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow">高校生のためのコミュニティ</span>
+        <h1>学校のこと、勉強のこと。<br><span>みんなで共有しよう。</span></h1>
+        <p>勉強のコツも、部活の話も、将来の悩みも。<br>同じ高校生同士でアイデアをつなぐ掲示板。</p>
+        <a class="button button-primary" href="#posts">掲示板を見る <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" aria-label="コミュニティを表すイラスト">
+        <div class="art-circle"></div>
+        <div class="art-note note-one"><span>✏️</span><b>勉強のヒント</b><small>みんなで共有！</small></div>
+        <div class="art-note note-two"><span>🌱</span><b>新しい発見</b><small>つながるアイデア</small></div>
+        <div class="art-note note-three"><span>💬</span><b>気軽に交流</b><small>自分のペースで</small></div>
+        <div class="art-star">✦</div>
+      </div>
+    </section>
+
+    <section class="container board-section" id="posts">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">COMMUNITY BOARD</span>
+          <h2>みんなの投稿</h2>
+        </div>
+        <button class="button button-primary" id="open-post-form-2">＋ 新しい投稿</button>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="投稿を検索..." aria-label="投稿を検索"></label>
+        <div class="category-list" id="category-list" aria-label="カテゴリー"></div>
+      </div>
+      <div class="post-grid" id="post-grid"></div>
+      <p class="empty-state hidden" id="empty-state">投稿が見つかりませんでした。検索条件を変更してみてください。</p>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-inner">
+        <div><span class="eyebrow">ABOUT CAMPUSLINK</span><h2>小さなアイデアが、<br>誰かの役に立つ。</h2></div>
+        <p>CampusLinkは、高校生が勉強・学校生活・進路・趣味について気軽に情報を共有するための掲示板です。思いやりを持って、安心して交流できる場所を目指しています。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner"><a class="brand" href="#"><span class="brand-mark">C</span> CampusLink</a><p>© 2026 CampusLink · 学生同士のアイデアをつなぐ</p></div>
+  </footer>
+
+  <dialog id="post-dialog">
+    <form id="post-form" class="dialog-content">
+      <div class="dialog-heading"><h2>新しい投稿</h2><button type="button" class="close-button" id="close-dialog" aria-label="閉じる">×</button></div>
+      <label>タイトル<input name="title" maxlength="80" required placeholder="投稿のタイトル"></label>
+      <label>カテゴリー<select name="category" required><option value="勉強">📚 勉強</option><option value="学校生活">🏫 学校生活</option><option value="進路">🌈 進路</option><option value="趣味">🎨 趣味</option></select></label>
+      <label>投稿内容<textarea name="content" maxlength="1000" required rows="5" placeholder="みんなに共有したいことを書いてみよう"></textarea></label>
+      <label>投稿者名<input name="author" maxlength="30" placeholder="匿名" value="匿名"></label>
+      <p class="form-note">個人情報や他人を傷つける内容は投稿しないでください。</p>
+      <button class="button button-primary submit-button" type="submit">投稿を公開する</button>
+    </form>
+  </dialog>
+  <script src="js/app.js"></script>
+</body>
+</html>
